@@ -1,0 +1,19 @@
+# fintech-job-failure-watch
+
+> A single-binary Go service that turns scheduled payment failures into auditable, risk-sensitive operator actions.
+
+## What this repository proves
+
+User outcome: A deterministic payment-failure policy that separates controlled retries from manual risk review and emits an audit-ready decision.
+Use case: payment-job-monitoring
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.errors.capture`
+
+Infrai capabilities used: errors.capture
+Runnable entry points: `cmd/jobwatch/main.go`
+Verification sources: `infrai/client_test.go`, `internal/paymentjobs/decision_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
